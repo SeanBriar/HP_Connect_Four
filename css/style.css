@@ -157,3 +157,36 @@ button:hover {
 #footer {
   font-size: 12px;
 }
+
+
+/*----- Modal -----*/
+#modal {
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	z-index: 1;
+	overflow: auto;
+}
+
+#modal-textbox {
+  background-color: rgb(19, 10, 54);
+  height: 250px;
+  width: 350px;
+  border: 1px solid gold;
+  border-radius: 2px;
+  margin: 150px auto;
+  box-shadow: 0 2px 5px rgba(255, 255, 255,);
+  text-align: center;
+}
+
+#closeBtn {
+  color: gold;
+  font-size: 12px;
+  border: 1px solid gold;
+  padding: 4px;
+  border-radius: 2px;
+  box-shadow: 1px 2px 3px gold;
+}
