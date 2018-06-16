@@ -46,8 +46,9 @@ header {
 
 
 /*------Game board ----- */
-#game-container {
-  min-width: 640px;
+.game-container {
+  min-width: 625px;
+  max-width: 625px;
   margin-left: 20px;
   background-color: rgba(87, 87, 88, 1);
   background-image: url('https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwizardsandwhatnot.com%2Ffiles%2F2016%2F05%2FHogwarts_Post-Battle.jpg&c=sc&w=850&h=560');
@@ -60,11 +61,13 @@ header {
   max-height: 632px;
 }
 
-.box {
+.square {
   border: 1px solid orange;
   width: 100px;
   height: 100px;
   display: inline-block;
+  margin-left: 1px;
+  margin-right: 1px;
 }
 
 #row {
@@ -169,6 +172,7 @@ button:hover {
 	width: 100%;
 	z-index: 1;
 	overflow: auto;
+  display: none;
 }
 
 #modal-textbox {
