@@ -2,10 +2,7 @@
 
 $(()=>{
   //global variables
-  let rows = 6
-  let cols = 7
   let alternate = true
-  const $box = $('.square')
   const $gameContainer = $('.game-container')
 
   //Click event
@@ -41,23 +38,18 @@ $(()=>{
   //Making the game board
   const makeBoard = ()=>{
     //make loops that adds a 6x7 grid to game container
-    //first loop to make rows and append to container
-    for (let row = 0; row < rows; row++){
-      const $row = $('<div>').addClass('row')
-      // now create a loop to make columns and append to the rows
-      for (let col = 0; col < cols; col++) {
-        const $col = $('<div>')
-          $col
+    for (let i = 0; i < 36; i++){
+        const $box = $('<div>')
           //add class for easy grabbing
           .addClass('square')
-          //////// add id for individual numbers ////////////
+          //add id for individualality
+          .attr('id', 'box'+ i)
           //add onClick function
           .on('click', $clicked)
-          $row.append($col)
+          $gameContainer.append($box)
       }
-      $gameContainer.append($row)
+
     }
-  }
 
   // Valid boxes
   // If a box has has a piece below it, it can be clicked and played
@@ -67,6 +59,7 @@ $(()=>{
   // create a function to check to see if adjacent rows have matching classes
   // have to have four matching classes in a row
   // create winner variable (let) and change to either deathEater or oOP
+  //on win activate modal with win phrase "DE won!" or "OoP won!"
 
   // const checkWin = ()=>{
   //     const sibs = $('.box').siblings('.deathEaterPlay')
