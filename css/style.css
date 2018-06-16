@@ -1,16 +1,9 @@
-
+/*-------General -------*/
 body {
   background: #141E30;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
-
+  background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   margin: 0;
-}
-
-header {
-  text-align: center;
-  background-color: black;
 }
 
 h1 {
@@ -26,22 +19,11 @@ h2 {
   margin: 0;
   color: rgb(210, 178, 38);
 }
+
 p {
   font-family: 'Encode Sans', cursive;
   font-size: 18px;
   color: rgb(210, 178, 38);
-}
-#row {
-  background-color: inherit;
-  border: 1px solid white;
-
-}
-
-#box {
-  border: 1px solid orange;
-  width: 100px;
-  height: 100px;
-  display: inline-block;
 }
 
 #main-container {
@@ -51,18 +33,19 @@ p {
   min-height: 700px;
 }
 
-#aside {
-  max-width: 300px;
-  height: 605px;
-  margin: 0 20px 0 20px;
+
+ /*------ Header ------*/
+header {
   text-align: center;
-  background-color: rgb(19, 10, 54);
-  padding: 15px;
-  border-radius: 3%;
-  box-shadow: 1px 2px 8px black;
+  background-color: black;
+}
+.logo {
+  width: 350px;
+  padding-top: 5px;
 }
 
 
+/*------Game board ----- */
 #game-container {
   min-width: 640px;
   margin-left: 20px;
@@ -77,11 +60,29 @@ p {
   max-height: 632px;
 }
 
-.logo {
-  width: 350px;
-  padding-top: 5px;
+.box {
+  border: 1px solid orange;
+  width: 100px;
+  height: 100px;
+  display: inline-block;
 }
 
+#row {
+  background-color: inherit;
+}
+
+
+/*----- Aside ----*/
+#aside {
+  max-width: 300px;
+  height: 605px;
+  margin: 0 20px 0 20px;
+  text-align: center;
+  background-color: rgb(19, 10, 54);
+  padding: 15px;
+  border-radius: 3%;
+  box-shadow: 1px 2px 8px black;
+}
 .dE {
   display: flex;
   align-items: center;
@@ -127,6 +128,7 @@ hr:before { /* Not really supposed to work, but does */
     border-radius: 20px;
 }
 
+/*---- Button -----*/
 button {
   background-color: inherit;
   font-size: 15px;
@@ -144,6 +146,7 @@ button:hover {
   color: rgb(19, 10, 54);
 }
 
+/*---- Footer -----*/
 .footer {
   background-color: black;
   /* height: 20px; */
