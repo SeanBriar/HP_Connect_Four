@@ -48,7 +48,7 @@ header {
 /*------Game board ----- */
 .game-container {
   min-width: 625px;
-  max-width: 625px;
+  max-width: 800px;
   margin-left: 20px;
   background-color: rgba(87, 87, 88, 1);
   background-image: url('https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwizardsandwhatnot.com%2Ffiles%2F2016%2F05%2FHogwarts_Post-Battle.jpg&c=sc&w=850&h=560');
@@ -98,6 +98,7 @@ header {
   overflow: auto;
   height: 605px;
 }
+
 .dE {
   display: flex;
   align-items: center;
