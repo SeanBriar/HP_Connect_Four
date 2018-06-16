@@ -93,6 +93,11 @@ header {
   border-radius: 3%;
   box-shadow: 1px 2px 8px black;
 }
+
+#aside-content {
+  overflow: auto;
+  height: 605px;
+}
 .dE {
   display: flex;
   align-items: center;

@@ -17,18 +17,17 @@ $(()=>{
         //prevent change of game piece once played
         alternate = false
         //turn off click so gamepiece cannot be changed
-        // $clickedBox.off('click')
       } else {
         $clickedBox
         .addClass('oOPPlay')
         alternate = true
-        // $clickedBox.off('click')
       }
       // checkWin();
   }
 
+  //Reset Button
   const $resetBtn = $('<button>').text('Reset the game').addClass('btn')
-  $('#aside').append($resetBtn)
+  $('#aside-content').append($resetBtn)
   $resetBtn.on('click', ()=>{
     let playedBox = $('.square')
     playedBox.removeClass('deathEaterPlay')
