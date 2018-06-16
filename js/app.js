@@ -2,15 +2,23 @@
 
 $(()=>{
 
-  // let alternate = true;  border: 1px solid orange;
+  let alternate = true
   let $box = $('.box')
 
   const $clicked = (event)=>{
     const $clickedBox = $(event.target)
-      $clickedBox
-        .css({'background-image': 'img/death_eaters.jpg'})
-
-      console.log('ive been clicked!');
+      if (alternate === true) {
+        $clickedBox
+        .css('background-image', 'url(img/Death-Eater-gamepiece.jpg)')
+        // console.log('ive been clicked!');
+        alternate = false
+        $clickedBox.off('click')
+      } else {
+        $clickedBox
+        .css('background-image', 'url(img/oop-gamepiece2.jpg)')
+        alternate = true
+        $clickedBox.off('click')
+      }
   }
 
 
