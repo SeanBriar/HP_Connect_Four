@@ -1,6 +1,10 @@
 
 body {
-  background-color: rgb(43, 40, 91);
+  background: #141E30;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #243B55, #141E30);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #243B55, #141E30); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
   margin: 0;
 }
 
@@ -17,10 +21,10 @@ h1 {
 }
 
 h2 {
-    font-family: 'Bigelow Rules', cursive;
-    font-size: 55px;
-    margin: 0;
-      color: rgb(210, 178, 38);
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 55px;
+  margin: 0;
+  color: rgb(210, 178, 38);
 }
 p {
   font-family: 'Encode Sans', cursive;
@@ -44,6 +48,7 @@ p {
   display: flex;
   justify-content: center;
   padding: 10px;
+  min-height: 700px;
 }
 
 #aside {
@@ -54,6 +59,7 @@ p {
   background-color: rgb(19, 10, 54);
   padding: 15px;
   border-radius: 3%;
+  box-shadow: 1px 2px 8px black;
 }
 
 
@@ -67,6 +73,8 @@ p {
   background-blend-mode: lighten;
   text-align: center;
   border-radius: 3px;
+  box-shadow: 1px 2px 8px black;
+  max-height: 632px;
 }
 
 .logo {
@@ -129,4 +137,20 @@ button {
   padding: 7px 10px 7px 10px;
   font-family: 'Encode Sans', cursive;
   box-shadow: 1px 2px 8px gold;
+}
+
+button:hover {
+  background-color: gold;
+  color: rgb(19, 10, 54);
+}
+
+.footer {
+  background-color: black;
+  /* height: 20px; */
+  text-align: center;
+  position:fixed;bottom:0;left:0;right:0;height:30px;
+}
+
+#footer {
+  font-size: 12px;
 }
