@@ -74,6 +74,13 @@ header {
   background-color: inherit;
 }
 
+.deathEaterPlay {
+  background-image: url('../img/Death-Eater-gamepiece.jpg');
+}
+
+.oOPPlay {
+  background-image: url('../img/oop-gamepiece2.jpg');
+}
 
 /*----- Aside ----*/
 #aside {
@@ -96,7 +103,6 @@ header {
   display: flex;
   align-items: center;
   padding-bottom: 10px;
-
 }
 
 #orderPic {
