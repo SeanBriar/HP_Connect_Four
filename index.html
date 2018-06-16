@@ -3,22 +3,29 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bigelow+Rules|Encode+Sans" rel="stylesheet">
     <title>Connect 4 - Harry Potter</title>
   </head>
   <body>
     <header>
-      <h1>HARRY POTTER CONNECT FOUR</h1>
+      <h1><img class="logo" src="http://www.boltonlams.co.uk/content/cms-images/_whats-on/Harry_Potter_black.png">Connect Four</h1>
     </header>
 
     <div id="main-container">
       <div id="aside">
-        <h3>Game Rules and stuff</h3>
+        <h2>Game Rules</h2>
+        <hr />
         <p>Welcome to the Magical World of Harry Potter! The Battle of Hogwarts is underway and you must choose a side! If you can get four of your pieces together in a row, you win!</p>
-        <p>Do you choose to be a member of The Order of Pheonix?</p>
-        <img src="img/order.jpg" />
-        <p>Or do you choose to be a Death Eater?</p>
-        <img src="img/death_eaters.jpg" />
+        <div class="oop">
+          <p>Do you choose to be a member of The Order of Pheonix?</p>
+          <img id="orderPic" src="img/order.jpg" />
+        </div>
+        <div class="dE">
+          <p>Or do you choose to be a Death Eater?</p>
+          <img id="eaterPic" src="img/death_eaters.jpg" />
+        </div>
         <p>Either way, Death Eaters go first!</p>
+        <button class="reset">Resest Game</button>
       </div>
 
       <div id="game-container">

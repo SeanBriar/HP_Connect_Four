@@ -1,22 +1,39 @@
-* {
-  border: 1px solid lightgrey;
-  color: rgb(246, 189, 79);
-}
 
 body {
   background-color: rgb(43, 40, 91);
+  margin: 0;
 }
 
 header {
   text-align: center;
+  background-color: black;
+}
+
+h1 {
+  font-family: 'Bigelow Rules', cursive;
+  font-size: 70px;
+  margin: 0;
+  color: rgb(210, 178, 38);
+}
+
+h2 {
+    font-family: 'Bigelow Rules', cursive;
+    font-size: 55px;
+    margin: 0;
+      color: rgb(210, 178, 38);
+}
+p {
+  font-family: 'Encode Sans', cursive;
+  font-size: 18px;
+  color: rgb(210, 178, 38);
 }
 #row {
   background-color: inherit;
   border: 1px solid white;
+
 }
 
 #box {
-  background-color: darkgrey;
   border: 1px solid orange;
   width: 100px;
   height: 100px;
@@ -26,15 +43,90 @@ header {
 #main-container {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 #aside {
-  max-width: 225px;
+  max-width: 300px;
+  height: 605px;
   margin: 0 20px 0 20px;
   text-align: center;
+  background-color: rgb(19, 10, 54);
+  padding: 15px;
+  border-radius: 3%;
 }
+
 
 #game-container {
   min-width: 640px;
   margin-left: 20px;
+  background-color: rgba(87, 87, 88, 1);
+  background-image: url('https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwizardsandwhatnot.com%2Ffiles%2F2016%2F05%2FHogwarts_Post-Battle.jpg&c=sc&w=850&h=560');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: lighten;
+  text-align: center;
+  border-radius: 3px;
+}
+
+.logo {
+  width: 350px;
+  padding-top: 5px;
+}
+
+.dE {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+.oop {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+
+}
+
+#orderPic {
+  padding-left: 10px;
+  border-radius: 25%;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+#eaterPic {
+  padding-right: 10px;
+  border-radius: 25%;
+  max-width: 100px;
+  max-height: 100px;
+}
+hr {
+    overflow: visible; /* For IE */
+    height: 30px;
+    border-style: solid;
+    border-color: gold;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: gold;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+button {
+  background-color: inherit;
+  font-size: 15px;
+  color: gold;
+  border-radius: 5%;
+  border: 1px solid gold;
+  margin-top: 20px;
+  padding: 7px 10px 7px 10px;
+  font-family: 'Encode Sans', cursive;
+  box-shadow: 1px 2px 8px gold;
 }
