@@ -6,6 +6,7 @@ $(()=>{
   const $gameContainer = $('.game-container')
 
   //Click event
+
   const $clicked = (event)=>{
     const $clickedBox = $(event.target)
       //uses global variable to switch from on player to another
@@ -23,6 +24,7 @@ $(()=>{
       }
       // checkWin();
   }
+  $('.square').on('click', $clicked)
 
   //Reset Button
   //on click remove all added classes/id's on gamepiece div's that occurred when player clicked box div
@@ -34,23 +36,6 @@ $(()=>{
     playedBox.removeClass('oOPPlay')
   })
 
-
-  //Making the game board
-  const makeBoard = ()=>{
-    //make loops that adds a 6x7 grid to game container
-    for (let i = 0; i < 36; i++){
-        const $box = $('<div>')
-          //add class for easy grabbing
-          .addClass('square')
-          //add id for individualality
-          .attr('id', 'box'+ i)
-          //add onClick function
-          .on('click', $clicked)
-          $gameContainer.append($box)
-      }
-
-    }
-
   // Valid boxes
   // If a box has has a piece below it, it can be clicked and played
   // If a box does not have a piece below it, it is not valid for play
@@ -60,15 +45,5 @@ $(()=>{
   // have to have four matching classes in a row
   // create winner variable (let) and change to either deathEater or oOP
   //on win activate modal with win phrase "DE won!" or "OoP won!"
-
-  // const checkWin = ()=>{
-  //     const sibs = $('.box').siblings('.deathEaterPlay')
-  //     console.log(sibs);
-  // }
-
-
-
-  makeBoard()
-
 
 })

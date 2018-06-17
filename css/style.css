@@ -47,8 +47,8 @@ header {
 
 /*------Game board ----- */
 .game-container {
-  min-width: 630px;
-  max-width: 630px;
+  min-width: 650px;
+  max-width: 650px;
   margin-left: 20px;
   background-color: rgba(87, 87, 88, 1);
   background-image: url('https://imagesvc.timeincapp.com/v3/fan/image?url=https%3A%2F%2Fwizardsandwhatnot.com%2Ffiles%2F2016%2F05%2FHogwarts_Post-Battle.jpg&c=sc&w=850&h=560');
@@ -71,15 +71,17 @@ header {
 }
 
 .row {
-  min-width: 635px;
+  min-width: 650px;
 }
 
 .deathEaterPlay {
   background-image: url('../img/Death-Eater-gamepiece.jpg');
+  border-radius: 50%;
 }
 
 .oOPPlay {
   background-image: url('../img/oop-gamepiece2.jpg');
+  border-radius: 50%;
 }
 
 /*----- Aside ----*/
@@ -113,14 +115,14 @@ header {
 
 #orderPic {
   padding-left: 10px;
-  border-radius: 25%;
+  border-radius: 10%;
   max-width: 100px;
   max-height: 100px;
 }
 
 #eaterPic {
   padding-right: 10px;
-  border-radius: 25%;
+  border-radius: 10%;
   max-width: 100px;
   max-height: 100px;
 }
