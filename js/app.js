@@ -46,6 +46,8 @@ $(()=>{
   // create winner variable (let) and change to either deathEater or oOP
   //on win activate modal with win phrase "DE won!" or "OoP won!"
 
+  // check count = 0
+
 })
 
 
