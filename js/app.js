@@ -22,9 +22,21 @@ $(()=>{
         .addClass('oOPPlay')
         alternate = true
       }
-      // checkWin();
+      // To Check Win
+      // create a function to check to see if adjacent rows have matching classes
+      // have to have four matching classes in a row
+      // create winner variable (let) and change to either deathEater or oOP
+      //on win activate modal with win phrase "DE won!" or "OoP won!"
+
+      //get current cell position
+      let boxCurRow = Number($clickedBox.attr('row'))
+      let boxCurCol = Number($clickedBox.attr('col'))
+      console.log('current clicked box row: ' + boxCurRow + ',' + 'current clicked box col: ' + boxCurCol);
+      // check count = 0
+
   }
   $('.square').on('click', $clicked)
+
 
   //Reset Button
   //on click remove all added classes/id's on gamepiece div's that occurred when player clicked box div
@@ -40,13 +52,6 @@ $(()=>{
   // If a box has has a piece below it, it can be clicked and played
   // If a box does not have a piece below it, it is not valid for play
 
-  // To Check Win
-  // create a function to check to see if adjacent rows have matching classes
-  // have to have four matching classes in a row
-  // create winner variable (let) and change to either deathEater or oOP
-  //on win activate modal with win phrase "DE won!" or "OoP won!"
-
-  // check count = 0
 
 })
 
