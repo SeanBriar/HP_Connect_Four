@@ -23,18 +23,34 @@ $(()=>{
         alternate = true
       }
       // To Check Win
-      // create a function to check to see if adjacent rows have matching classes
       // have to have four matching classes in a row
       // create winner variable (let) and change to either deathEater or oOP
       //on win activate modal with win phrase "DE won!" or "OoP won!"
 
-      //get current cell position
-      let boxCurRow = Number($clickedBox.attr('row'))
-      let boxCurCol = Number($clickedBox.attr('col'))
-      console.log('current clicked box row: ' + boxCurRow + ',' + 'current clicked box col: ' + boxCurCol);
-      // check count = 0
+      // create a function to check to see if adjacent rows have matching classes
+      const checkBox = ($clickedBox, row, col)=>{
+        //get current cell position
+        let boxCurRow = Number($clickedBox.attr('row'))
+        let boxCurCol = Number($clickedBox.attr('col'))
+        console.log('current clicked box row: ' + boxCurRow + ', ' + 'current clicked box col: ' + boxCurCol);
 
+        // find next cell overflow
+        let nextRowNum = boxCurRow+row
+        let nextColNum = boxCurCol+col
+        let $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
+        console.log('the next box is: ' , $nextBox);
+        // check count = 0
+
+      }
+    checkBox($clickedBox, 0, 1);
   }
+
+
+
+
+
+
+
   $('.square').on('click', $clicked)
 
 
