@@ -191,8 +191,8 @@ button:hover {
 
 #modal-textbox {
   background-color: rgb(19, 10, 54);
-  height: 250px;
-  width: 350px;
+  height: 450px;
+  width: 650px;
   border: 1px solid gold;
   border-radius: 2px;
   margin: 150px auto;
@@ -207,4 +207,18 @@ button:hover {
   padding: 4px;
   border-radius: 2px;
   box-shadow: 1px 2px 3px gold;
+}
+
+#oopWinPic {
+  width: 350px;
+  height: 220px;
+}
+
+#deWinPic {
+  width: 450px;
+  height: 220px;
+}
+
+#winText {
+  font-size: 25px;
 }

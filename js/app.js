@@ -4,6 +4,8 @@ $(()=>{
   //global variables
   let alternate = true
   const $gameContainer = $('.game-container')
+  let $modal = $('#modal')
+  let winner = ''
 
 
   //Click event
@@ -50,13 +52,17 @@ $(()=>{
   // Check for Winner
   const checkWin = () => {
     //if there are four of the same classes in a row, there is a winner
-
+    const $winText = $('#wintext')
+    const $winImg = ('#winImage')
+    // set modul display to 'block' to display winner
+    // add close button on modal
+    // set modal text to display winner (add image of celebration?)
     //Horizontal
     //row 6
     if ($('#box30').hasClass('deathEaterPlay') && ($('#box31').hasClass('deathEaterPlay')) && $('#box32').hasClass('deathEaterPlay') && ($('#box33').hasClass('deathEaterPlay'))) {
-      console.log('de wins');
+      winner = 1
     } else if ($('#box30').hasClass('oOPPlay') && ($('#box31').hasClass('oOPPlay')) && $('#box32').hasClass('oOPPlay') && ($('#box33').hasClass('oOPPlay'))){
-      console.log('order wins');
+      winner = 2
 
     } else if ($('#box31').hasClass('deathEaterPlay') && ($('#box32').hasClass('deathEaterPlay')) && $('#box33').hasClass('deathEaterPlay') && ($('#box34').hasClass('deathEaterPlay'))){
       console.log('deathEater wins');
@@ -135,6 +141,20 @@ $(()=>{
         console.log('order wins');
       }
 
+
+
+
+
+
+      if (winner === 1) {
+        $modal.css('display', 'block')
+        $winText.text('The Death Eaters have won! Burn Howarts, Burn!')
+        $('<img id="deWinPic" src="https://vignette.wikia.nocookie.net/nicktheultimaswordwielder/images/1/12/Lord_Voldemort_%26_the_Death_Eaters.jpg/revision/latest?cb=20130823032305" />').appendTo($winImg)
+      } else if (winner === 2) {
+        $modal.css('display', 'block')
+        $winText.text('The Order of the Pheonix have successfuly defended Hogwarts!')
+        $('<img id="oopWinPic" src="http://cdn.playbuzz.com/cdn/41929c94-eab4-4a37-8d21-01ab35c3c384/a81010e7-c0ce-4998-80be-8a0ae6c6d709.jpg" />').appendTo($winImg)
+      }
   } // ends checkWin
 
   //Reset Button
@@ -144,7 +164,20 @@ $(()=>{
     location.reload()
   }) //end reset button
 
+  // Modal Close button
+  const $closeButton = $('#closeBtn')
+    $closeButton.on('click', ()=>{
+      $modal.css('display', 'none')
+    })
 
 
   makeBoard();
 }) //document ready
+
+
+// put boxes in array according to row row 1 [box1, box2, box3, box4, box5]
+// loops through array and check to see if any have class of player
+// add to variable everytime there is a match
+// when there are four, call winner
+//
+// do the same for columns
