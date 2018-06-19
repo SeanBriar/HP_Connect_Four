@@ -73,7 +73,8 @@ $(()=>{
       checkNextBox($clickedBox, -1, 0) //down
       calculateWin()
 
-
+      let boxCurRow = 0
+      let boxCurCol = 0
     } //ends checForkWin
 
       // create a function to check to see if adjacent rows have matching classes
