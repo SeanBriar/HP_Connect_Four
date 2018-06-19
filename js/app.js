@@ -5,6 +5,12 @@ $(()=>{
   let alternate = true
   let currentPlayer = 1
   let gameCounter = 0
+  let maxWin = 3
+  let rowNum = 6
+  let colNum = 6
+  let boxCurCol = 0
+  let boxCurRow = 0
+  let match = true
   const $gameContainer = $('.game-container')
 
 
@@ -12,32 +18,65 @@ $(()=>{
 
   const $clicked = (event)=>{
     const $clickedBox = $(event.target)
+    console.log($clickedBox);
       //uses global variable to switch from on player to another
     if (alternate === true) {
       $clickedBox
       //add class to assign box to player who clicked
       .addClass('deathEaterPlay')
       .attr('player', '1')
-      .off()
+      // .off()
       currentPlayer = 1
       //prevent change of game piece once played
       alternate = false
       //turn off click so gamepiece cannot be changed
+      match = true
     } else {
       $clickedBox
       .addClass('oOPPlay')
       .attr('player', '2')
-      .off()
+      // .off()
       currentPlayer = 2
       alternate = true
+      match = true
     }
-      // To Check Win
-      // have to have four matching classes in a row
-      // create winner variable (let) and change to either deathEater or oOP
-      //on win activate modal with win phrase "DE won!" or "OoP won!"
+
+    // To Check Win
+    //on win activate modal with win phrase "DE won!" or "OoP won!"
+    const calculateWin = ()=>{
+      if (gameCounter >= maxWin) {
+        console.log('winner');
+        // enable modus
+        // enter winner info
+      } else {
+        // continue play
+        //reset game gameCounter
+        gameCounter = 0
+      }
+    }
+    // have to have four matching classes in a row
+    // create winner variable (let) and change to either deathEater or oOP
+    const checkForWin = ($clickedBox)=> {
+      console.log($clickedBox);
+
+      // cyle through the boxes until
+      //horizonal wins
+      checkNextBox($clickedBox, 0, 1) //left: add one column
+      checkNextBox($clickedBox, 0 -1) //right: subtract one column
+      calculateWin()
+
+
+      // vertical wins
+      checkNextBox($clickedBox, 1, 0) //up
+      checkNextBox($clickedBox, -1, 0) //down
+      calculateWin()
+
+
+    } //ends checForkWin
 
       // create a function to check to see if adjacent rows have matching classes
     const checkNextBox = ($clickedBox, row, col)=>{
+      console.log('starting check next box');
       //get current cell position
       let boxCurRow = Number($clickedBox.attr('row'))
       let boxCurCol = Number($clickedBox.attr('col'))
@@ -48,35 +87,39 @@ $(()=>{
       let $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
       // console.log('the next box is: ' , $nextBox);
 
-      let rowNum = 6
-      let colNum = 6
-      let foundMatch = true
       // loop to check boxes
       while (
-        (nextRowNum > 0) && (nextColNum > 0) && (nextRowNum <= rowNum) && (nextColNum <= colNum) && (foundMatch)){
+        (nextRowNum > 0) && (nextColNum > 0) && (nextRowNum <= rowNum) && (nextColNum <= colNum) && (match) && (gameCounter <= maxWin)){
+          console.log('starting while loop');
           console.log('current player is: ' , currentPlayer)
-          console.log($nextBox.attr('player'));
+          console.log('next box is ' , $nextBox);
           if ($nextBox.attr('player') == currentPlayer) {
             console.log('matched');
             gameCounter ++
+
+            //check next cell (depends on direction)
+            $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
+            console.log('next box is: ' , $nextBox);
+            nextRowNum += row
+            nextColNum += col
           } else {
-            console.log('not there yet...');
-            foundMatch = false
+            console.log('no match');
+            match = false
+            gameCounter = 0
           }
-          nextRowNum += row
-          nextColNum += col
-          $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
-        }
-    }
-    checkNextBox($clickedBox, 0, 1);
-  }
+        } //ends whileloop
+
+    //
+    //
+    // }
+    //
+  } //ends checkNextBox function
 
 
 
+  checkForWin($clickedBox)
 
-
-
-
+  } // ends click event function
   $('.square').on('click', $clicked)
 
 
@@ -88,14 +131,11 @@ $(()=>{
     let playedBox = $('.square')
     playedBox.removeClass('deathEaterPlay')
     playedBox.removeClass('oOPPlay')
-  })
+  }) //end reset button
 
   // Valid boxes
   // If a box has has a piece below it, it can be clicked and played
   // If a box does not have a piece below it, it is not valid for play
 
 
-})
-
-
-// test test test repo test
+}) //document ready
