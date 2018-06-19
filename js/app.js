@@ -8,17 +8,15 @@ $(()=>{
   let maxWin = 3
   let rowNum = 6
   let colNum = 6
-  let boxCurCol = 0
-  let boxCurRow = 0
-  let match = true
   const $gameContainer = $('.game-container')
 
 
   //Click event
 
   const $clicked = (event)=>{
+    let gameCounter = 0
     const $clickedBox = $(event.target)
-    console.log($clickedBox);
+    // console.log($clickedBox);
       //uses global variable to switch from on player to another
     if (alternate === true) {
       $clickedBox
@@ -45,10 +43,13 @@ $(()=>{
     //on win activate modal with win phrase "DE won!" or "OoP won!"
     const calculateWin = ()=>{
       if (gameCounter >= maxWin) {
+        console.log(gameCounter);
         console.log('winner');
+        alert('someone has one!')
         // enable modus
         // enter winner info
       } else {
+        console.log('no winner yet');
         // continue play
         //reset game gameCounter
         gameCounter = 0
@@ -58,6 +59,7 @@ $(()=>{
     // create winner variable (let) and change to either deathEater or oOP
     const checkForWin = ($clickedBox)=> {
       console.log($clickedBox);
+      console.log('check for win running');
 
       // cyle through the boxes until
       //horizonal wins
@@ -76,7 +78,7 @@ $(()=>{
 
       // create a function to check to see if adjacent rows have matching classes
     const checkNextBox = ($clickedBox, row, col)=>{
-      console.log('starting check next box');
+      // console.log('starting check next box');
       //get current cell position
       let boxCurRow = Number($clickedBox.attr('row'))
       let boxCurCol = Number($clickedBox.attr('col'))
@@ -85,23 +87,23 @@ $(()=>{
       let nextRowNum = boxCurRow+row
       let nextColNum = boxCurCol+col
       let $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
-      // console.log('the next box is: ' , $nextBox);
+      console.log('the next box is: ' , $nextBox);
 
       // loop to check boxes
       while (
         (nextRowNum > 0) && (nextColNum > 0) && (nextRowNum <= rowNum) && (nextColNum <= colNum) && (match) && (gameCounter <= maxWin)){
-          console.log('starting while loop');
-          console.log('current player is: ' , currentPlayer)
-          console.log('next box is ' , $nextBox);
+          // console.log('starting while loop');
+          // console.log('current player is: ' , currentPlayer)
+          // console.log('next box is ' , $nextBox);
           if ($nextBox.attr('player') == currentPlayer) {
-            console.log('matched');
+            // console.log('matched');
             gameCounter ++
 
             //check next cell (depends on direction)
-            $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
-            console.log('next box is: ' , $nextBox);
             nextRowNum += row
             nextColNum += col
+            $nextBox = $(`div[row=${nextRowNum}][col=${nextColNum}]`)
+            console.log('next box is: ' , $nextBox);
           } else {
             console.log('no match');
             match = false
@@ -139,3 +141,8 @@ $(()=>{
 
 
 }) //document ready
+
+
+// loop through columns
+// check for matching player attribute
+// if $nextBox.attr('player') == currentPlayer
