@@ -6,7 +6,12 @@ $(()=>{
   const $gameContainer = $('.game-container')
   let $modal = $('#modal')
   let winner = ''
-
+  let col1;
+  let col2;
+  let col3;
+  let col4;
+  let col5;
+  let col6;
 
   // Game Board
 
@@ -15,41 +20,43 @@ $(()=>{
 
   const $clicked = (event)=>{
     const $clickedBox = $(event.target)
-    let col1 = [$('#box30'), $('#box24'), $('#box18'), $('#box12'), $('#box6'), $('#box0')]
-    let col2 = [$('#box31'), $('#box25'), $('#box19'), $('#box13'), $('#box7'), $('#box1')]
-    let col3 = [$('#box32'), $('#box26'), $('#box20'), $('#box14'), $('#box8'), $('#box2')]
-    let col4 = [$('#box33'), $('#box27'), $('#box21'), $('#box15'), $('#box9'), $('#box3')]
-    let col5 = [$('#box34'), $('#box28'), $('#box22'), $('#box16'), $('#box10'), $('#box4')]
-    let col6 = [$('#box35'), $('#box29'), $('#box23'), $('#box17'), $('#box11'), $('#box5')]
-
+    let $newClickedBox;
     //  look for column number of clicked box
     let $clickedCol = $clickedBox.attr('col')
-    console.log($clickedCol);
+    // console.log($clickedCol);
     // look through arrays with if statements to find valid box
     if ($clickedCol == 1) {
-      newClickedBox = col1.shift()
-      console.log(newClickedBox);
-      console.log(col1);
+      // shift() removes and returns it at the same time
+      $newClickedBox = col1.shift()
+    } else  if ($clickedCol == 2){
+      $newClickedBox = col2.shift()
+    } else if ($clickedCol == 3) {
+      $newClickedBox = col3.shift()
+    } else if ($clickedCol == 4) {
+      $newClickedBox = col4.shift()
+    } else if ($clickedCol == 5) {
+      $newClickedBox = col5.shift()
+    } else if ($clickedCol == 6) {
+      $newClickedBox = col6.shift()
     } else {
-      console.log('not column 1');
+      alert('Invalid. Try Again')
     }
-    // retrieve first item array [0]
-    // --- shift() removes and returns it at the same time
-    // newclickedbox = col1.shift()
 
-      //uses global variable to switch from on player to another
+
+
     if (alternate === true) {
-      $clickedBox //change to newclicked once gone through colms
+      $newClickedBox //change to newclicked once gone through colms
       //add class to assign box to player who clicked
       .addClass('deathEaterPlay')
 
       //prevent change of game piece once played
       alternate = false
     } else {
-      $clickedBox //change to newclicked once gone through colms
+      $newClickedBox //change to newclicked once gone through colms
       .addClass('oOPPlay')
       alternate = true
     }
+      //uses global variable to switch from on player to another
     checkWin();
   } // ends click event function
 
@@ -71,6 +78,13 @@ $(()=>{
     }
   } // ends makeBoard
   makeBoard();
+
+   col1 = [$('#box30'), $('#box24'), $('#box18'), $('#box12'), $('#box6'), $('#box0')]
+   col2 = [$('#box31'), $('#box25'), $('#box19'), $('#box13'), $('#box7'), $('#box1')]
+   col3 = [$('#box32'), $('#box26'), $('#box20'), $('#box14'), $('#box8'), $('#box2')]
+   col4 = [$('#box33'), $('#box27'), $('#box21'), $('#box15'), $('#box9'), $('#box3')]
+   col5 = [$('#box34'), $('#box28'), $('#box22'), $('#box16'), $('#box10'), $('#box4')]
+   col6 = [$('#box35'), $('#box29'), $('#box23'), $('#box17'), $('#box11'), $('#box5')]
 
 
 
