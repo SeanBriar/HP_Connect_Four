@@ -54,9 +54,7 @@ $(()=>{
     //if there are four of the same classes in a row, there is a winner
     const $winText = $('#winText')
     const $winImg = ('#winImage')
-    // set modul display to 'block' to display winner
-    // add close button on modal
-    // set modal text to display winner (add image of celebration?)
+
     //Horizontal
     //row 6
     if ($('#box30').hasClass('deathEaterPlay') && ($('#box31').hasClass('deathEaterPlay')) && $('#box32').hasClass('deathEaterPlay') && ($('#box33').hasClass('deathEaterPlay'))) {
@@ -139,13 +137,85 @@ $(()=>{
         winner = 1
     }else if ($('#box8').hasClass('oOPPlay') && ($('#box9').hasClass('oOPPlay')) && $('#box10').hasClass('oOPPlay') && ($('#box11').hasClass('oOPPlay'))){
         winner = 2
+
+
+
+
+
+
+      //vertical
+      //column 1
+    } else if ($('#box30').hasClass('deathEaterPlay') && ($('#box24').hasClass('deathEaterPlay')) && $('#box18').hasClass('deathEaterPlay') && ($('#box12').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box30').hasClass('oOPPlay') && ($('#box24').hasClass('oOPPlay')) && $('#box18').hasClass('oOPPlay') && ($('#box12').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box24').hasClass('deathEaterPlay') && ($('#box18').hasClass('deathEaterPlay')) && $('#box12').hasClass('deathEaterPlay') && ($('#box6').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box24').hasClass('oOPPlay') && ($('#box18').hasClass('oOPPlay')) && $('#box12').hasClass('oOPPlay') && ($('#box6').hasClass('oOPPlay'))){
+        winner = 2
+
+      //column 2
+    } else if ($('#box13').hasClass('deathEaterPlay') && ($('#box19').hasClass('deathEaterPlay')) && $('#box25').hasClass('deathEaterPlay') && ($('#box31').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box13').hasClass('oOPPlay') && ($('#box19').hasClass('oOPPlay')) && $('#box25').hasClass('oOPPlay') && ($('#box31').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box7').hasClass('deathEaterPlay') && ($('#box13').hasClass('deathEaterPlay')) && $('#box19').hasClass('deathEaterPlay') && ($('#box25').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box7').hasClass('oOPPlay') && ($('#box13').hasClass('oOPPlay')) && $('#box19').hasClass('oOPPlay') && ($('#box25').hasClass('oOPPlay'))){
+        winner = 2
+
+      //column 3
+    } else if ($('#box32').hasClass('deathEaterPlay') && ($('#box26').hasClass('deathEaterPlay')) && $('#box20').hasClass('deathEaterPlay') && ($('#box14').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box32').hasClass('oOPPlay') && ($('#box26').hasClass('oOPPlay')) && $('#box20').hasClass('oOPPlay') && ($('#box14').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box26').hasClass('deathEaterPlay') && ($('#box20').hasClass('deathEaterPlay')) && $('#box14').hasClass('deathEaterPlay') && ($('#box8').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box26').hasClass('oOPPlay') && ($('#box20').hasClass('oOPPlay')) && $('#box14').hasClass('oOPPlay') && ($('#box8').hasClass('oOPPlay'))){
+        winner = 2
+
+
+      //column 4
+    } else if ($('#box33').hasClass('deathEaterPlay') && ($('#box27').hasClass('deathEaterPlay')) && $('#box21').hasClass('deathEaterPlay') && ($('#box15').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box33').hasClass('oOPPlay') && ($('#box27').hasClass('oOPPlay')) && $('#box21').hasClass('oOPPlay') && ($('#box15').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box27').hasClass('deathEaterPlay') && ($('#box21').hasClass('deathEaterPlay')) && $('#box15').hasClass('deathEaterPlay') && ($('#box8').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box27').hasClass('oOPPlay') && ($('#box21').hasClass('oOPPlay')) && $('#box15').hasClass('oOPPlay') && ($('#box9').hasClass('oOPPlay'))){
+        winner = 2
+
+      //column 5
+    } else if ($('#box34').hasClass('deathEaterPlay') && ($('#box28').hasClass('deathEaterPlay')) && $('#box22').hasClass('deathEaterPlay') && ($('#box16').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box34').hasClass('oOPPlay') && ($('#box28').hasClass('oOPPlay')) && $('#box22').hasClass('oOPPlay') && ($('#box16').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box28').hasClass('deathEaterPlay') && ($('#box22').hasClass('deathEaterPlay')) && $('#box16').hasClass('deathEaterPlay') && ($('#box10').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box28').hasClass('oOPPlay') && ($('#box22').hasClass('oOPPlay')) && $('#box16').hasClass('oOPPlay') && ($('#box10').hasClass('oOPPlay'))){
+        winner = 2
+
+      //column 6
+    } else if ($('#box35').hasClass('deathEaterPlay') && ($('#box29').hasClass('deathEaterPlay')) && $('#box23').hasClass('deathEaterPlay') && ($('#box17').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box35').hasClass('oOPPlay') && ($('#box29').hasClass('oOPPlay')) && $('#box23').hasClass('oOPPlay') && ($('#box17').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box29').hasClass('deathEaterPlay') && ($('#box23').hasClass('deathEaterPlay')) && $('#box17').hasClass('deathEaterPlay') && ($('#box11').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box29').hasClass('oOPPlay') && ($('#box23').hasClass('oOPPlay')) && $('#box17').hasClass('oOPPlay') && ($('#box11').hasClass('oOPPlay'))){
+        winner = 2
       }
 
 
-
-
-
-
+      // set modul display to 'block' to display winner
+      // add close button on modal
+      // set modal text to display winner (add image of celebration?)
       if (winner === 1) {
         $modal.css('display', 'block')
         $winText.text('The Death Eaters have won! Burn Howarts, Burn!')
@@ -168,6 +238,7 @@ $(()=>{
   const $closeButton = $('#closeBtn')
     $closeButton.on('click', ()=>{
       $modal.css('display', 'none')
+      location.reload()
     })
 
 
