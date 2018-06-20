@@ -241,6 +241,12 @@ $(()=>{
       location.reload()
     })
 
+    //Music Button
+    const $musicBtn = $('<button>').text('Turn off Music')
+      $('#musicBtn').append($musicBtn)
+      $musicBtn.on('click', ()=>{
+        $('#music').attr('src', 'none')
+      })
 
   makeBoard();
 }) //document ready
