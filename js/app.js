@@ -42,8 +42,6 @@ $(()=>{
       alert('Invalid. Try Again')
     }
 
-
-
     if (alternate === true) {
       $newClickedBox //change to newclicked once gone through colms
       //add class to assign box to player who clicked
@@ -177,7 +175,22 @@ $(()=>{
     }else if ($('#box8').hasClass('oOPPlay') && ($('#box9').hasClass('oOPPlay')) && $('#box10').hasClass('oOPPlay') && ($('#box11').hasClass('oOPPlay'))){
         winner = 2
 
+      //row 1
 
+    } else if ($('#box0').hasClass('deathEaterPlay') && ($('#box1').hasClass('deathEaterPlay')) && $('#box2').hasClass('deathEaterPlay') && ($('#box3').hasClass('deathEaterPlay'))) {
+         winner = 1
+     } else if ($('#box0').hasClass('oOPPlay') && ($('#box1').hasClass('oOPPlay')) && $('#box2').hasClass('oOPPlay') && ($('#box3').hasClass('oOPPlay'))){
+       winner = 2
+
+     } else if ($('#box1').hasClass('deathEaterPlay') && ($('#box2').hasClass('deathEaterPlay')) && $('#box3').hasClass('deathEaterPlay') && ($('#box4').hasClass('deathEaterPlay'))){
+         winner = 1
+     }else if ($('#box1').hasClass('oOPPlay') && ($('#box2').hasClass('oOPPlay')) && $('#box3').hasClass('oOPPlay') && ($('#box4').hasClass('oOPPlay'))){
+         winner = 2
+
+     } else if ($('#box3').hasClass('deathEaterPlay') && ($('#box4').hasClass('deathEaterPlay')) && $('#box5').hasClass('deathEaterPlay') && ($('#box6').hasClass('deathEaterPlay'))){
+         winner = 1
+     }else if ($('#box3').hasClass('oOPPlay') && ($('#box4').hasClass('oOPPlay')) && $('#box5').hasClass('oOPPlay') && ($('#box6').hasClass('oOPPlay'))){
+         winner = 2
 
 
 
@@ -194,6 +207,11 @@ $(()=>{
     }else if ($('#box24').hasClass('oOPPlay') && ($('#box18').hasClass('oOPPlay')) && $('#box12').hasClass('oOPPlay') && ($('#box6').hasClass('oOPPlay'))){
         winner = 2
 
+    } else if ($('#box0').hasClass('deathEaterPlay') && ($('#box6').hasClass('deathEaterPlay')) && $('#box12').hasClass('deathEaterPlay') && ($('#box18').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box0').hasClass('oOPPlay') && ($('#box6').hasClass('oOPPlay')) && $('#box12').hasClass('oOPPlay') && ($('#box18').hasClass('oOPPlay'))){
+        winner = 2
+
       //column 2
     } else if ($('#box13').hasClass('deathEaterPlay') && ($('#box19').hasClass('deathEaterPlay')) && $('#box25').hasClass('deathEaterPlay') && ($('#box31').hasClass('deathEaterPlay'))){
         winner = 1
@@ -203,6 +221,11 @@ $(()=>{
     } else if ($('#box7').hasClass('deathEaterPlay') && ($('#box13').hasClass('deathEaterPlay')) && $('#box19').hasClass('deathEaterPlay') && ($('#box25').hasClass('deathEaterPlay'))){
         winner = 1
     }else if ($('#box7').hasClass('oOPPlay') && ($('#box13').hasClass('oOPPlay')) && $('#box19').hasClass('oOPPlay') && ($('#box25').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box1').hasClass('deathEaterPlay') && ($('#box7').hasClass('deathEaterPlay')) && $('#box13').hasClass('deathEaterPlay') && ($('#box19').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box1').hasClass('oOPPlay') && ($('#box7').hasClass('oOPPlay')) && $('#box13').hasClass('oOPPlay') && ($('#box19').hasClass('oOPPlay'))){
         winner = 2
 
       //column 3
@@ -215,7 +238,10 @@ $(()=>{
         winner = 1
     }else if ($('#box26').hasClass('oOPPlay') && ($('#box20').hasClass('oOPPlay')) && $('#box14').hasClass('oOPPlay') && ($('#box8').hasClass('oOPPlay'))){
         winner = 2
-
+    } else if ($('#box2').hasClass('deathEaterPlay') && ($('#box8').hasClass('deathEaterPlay')) && $('#box14').hasClass('deathEaterPlay') && ($('#box20').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box2').hasClass('oOPPlay') && ($('#box8').hasClass('oOPPlay')) && $('#box14').hasClass('oOPPlay') && ($('#box20').hasClass('oOPPlay'))){
+        winner = 2
 
       //column 4
     } else if ($('#box33').hasClass('deathEaterPlay') && ($('#box27').hasClass('deathEaterPlay')) && $('#box21').hasClass('deathEaterPlay') && ($('#box15').hasClass('deathEaterPlay'))){
@@ -223,10 +249,16 @@ $(()=>{
     }else if ($('#box33').hasClass('oOPPlay') && ($('#box27').hasClass('oOPPlay')) && $('#box21').hasClass('oOPPlay') && ($('#box15').hasClass('oOPPlay'))){
         winner = 2
 
-    } else if ($('#box27').hasClass('deathEaterPlay') && ($('#box21').hasClass('deathEaterPlay')) && $('#box15').hasClass('deathEaterPlay') && ($('#box8').hasClass('deathEaterPlay'))){
+    } else if ($('#box27').hasClass('deathEaterPlay') && ($('#box21').hasClass('deathEaterPlay')) && $('#box15').hasClass('deathEaterPlay') && ($('#box9').hasClass('deathEaterPlay'))){
         winner = 1
     }else if ($('#box27').hasClass('oOPPlay') && ($('#box21').hasClass('oOPPlay')) && $('#box15').hasClass('oOPPlay') && ($('#box9').hasClass('oOPPlay'))){
         winner = 2
+
+    } else if ($('#box3').hasClass('deathEaterPlay') && ($('#box9').hasClass('deathEaterPlay')) && $('#box15').hasClass('deathEaterPlay') && ($('#box21').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box3').hasClass('oOPPlay') && ($('#box9').hasClass('oOPPlay')) && $('#box15').hasClass('oOPPlay') && ($('#box21').hasClass('oOPPlay'))){
+        winner = 2
+
 
       //column 5
     } else if ($('#box34').hasClass('deathEaterPlay') && ($('#box28').hasClass('deathEaterPlay')) && $('#box22').hasClass('deathEaterPlay') && ($('#box16').hasClass('deathEaterPlay'))){
@@ -239,6 +271,11 @@ $(()=>{
     }else if ($('#box28').hasClass('oOPPlay') && ($('#box22').hasClass('oOPPlay')) && $('#box16').hasClass('oOPPlay') && ($('#box10').hasClass('oOPPlay'))){
         winner = 2
 
+    } else if ($('#box4').hasClass('deathEaterPlay') && ($('#box10').hasClass('deathEaterPlay')) && $('#box16').hasClass('deathEaterPlay') && ($('#box22').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box4').hasClass('oOPPlay') && ($('#box10').hasClass('oOPPlay')) && $('#box16').hasClass('oOPPlay') && ($('#box22').hasClass('oOPPlay'))){
+        winner = 2
+
       //column 6
     } else if ($('#box35').hasClass('deathEaterPlay') && ($('#box29').hasClass('deathEaterPlay')) && $('#box23').hasClass('deathEaterPlay') && ($('#box17').hasClass('deathEaterPlay'))){
         winner = 1
@@ -248,6 +285,11 @@ $(()=>{
     } else if ($('#box29').hasClass('deathEaterPlay') && ($('#box23').hasClass('deathEaterPlay')) && $('#box17').hasClass('deathEaterPlay') && ($('#box11').hasClass('deathEaterPlay'))){
         winner = 1
     }else if ($('#box29').hasClass('oOPPlay') && ($('#box23').hasClass('oOPPlay')) && $('#box17').hasClass('oOPPlay') && ($('#box11').hasClass('oOPPlay'))){
+        winner = 2
+
+    } else if ($('#box5').hasClass('deathEaterPlay') && ($('#box10').hasClass('deathEaterPlay')) && $('#box16').hasClass('deathEaterPlay') && ($('#box22').hasClass('deathEaterPlay'))){
+        winner = 1
+    }else if ($('#box5').hasClass('oOPPlay') && ($('#box10').hasClass('oOPPlay')) && $('#box16').hasClass('oOPPlay') && ($('#box22').hasClass('oOPPlay'))){
         winner = 2
       }
 
