@@ -26,7 +26,7 @@ $(()=>{
     // console.log($clickedCol);
     // look through arrays with if statements to find valid box
     if ($clickedCol == 1) {
-      // shift() removes and returns it at the same time
+      // shift() removes and returns first item in array at the same time
       $newClickedBox = col1.shift()
     } else  if ($clickedCol == 2){
       $newClickedBox = col2.shift()
@@ -309,13 +309,6 @@ $(()=>{
   } // ends checkWin
 
 
-
-
-
-
-
-
-
   //Reset Button
   const $resetBtn = $('<button>').text('Reset the game').addClass('btn')
   $('#aside-content').append($resetBtn)
@@ -339,11 +332,3 @@ $(()=>{
 
 
 }) //document ready
-
-
-// put boxes in array according to row row 1 [box1, box2, box3, box4, box5]
-// loops through array and check to see if any have class of player
-// add to variable everytime there is a match
-// when there are four, call winner
-//
-// do the same for columns
